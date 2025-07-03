@@ -1,0 +1,1 @@
+go run stream-metrics.go --youtube-api-key=${YOUTUBE_API_KEY} --host=:8080
