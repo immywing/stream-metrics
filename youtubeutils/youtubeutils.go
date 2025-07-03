@@ -63,6 +63,7 @@ func getLiveStreamMetrics(service *youtube.Service, item *youtube.SearchResult) 
 	}
 
 	return datamodels.LiveStreamMetrics{
+		Platform:          datamodels.YouTube,
 		ChannelTitle:      item.Snippet.ChannelTitle,
 		StreamTitle:       item.Snippet.Title,
 		Thumbnail:         item.Snippet.Thumbnails.High.Url,
