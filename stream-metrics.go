@@ -38,10 +38,11 @@ func main() {
 		os.Exit(1)
 	}
 
-	server := api.RunStreamMetricsApi()
+	server := api.NewStreamMetricsServer()
+	server.Run()
 	signals := make(chan os.Signal, 1)
 	signal.Notify(signals, os.Interrupt, syscall.SIGTERM)
 	<-signals
-	_ = api.ShutDownServer(context.Background(), server)
+	_ = server.ShutDownServer(context.Background())
 
 }
